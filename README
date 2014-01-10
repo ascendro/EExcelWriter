@@ -1,0 +1,23 @@
+EExcelWriter is a component similar to EExcelView, but uses a different library to generate the excel files, leading speed improvements of up to 10 times. 
+
+The library used is http://www.bettina-attack.de/jonny/view.php/projects/php_writeexcel/ , but with a part of it modified to work on PHP 5.4.
+
+Instalation instructions :
+Paste the contents of the repository in your protected directory, make sure that you load components.EExcelWriter in your configuration file.
+
+Usage example :
+
+$this->widget('EExcelWriter', array(
+    'dataProvider' => $model->search(),
+    'title'        => 'EExcelWriter',
+    'stream'       => FALSE,
+    'fileName'     => 'file.xls',
+    'columns'      => array(
+        array(
+            'header' => 'id',
+            'name' => 'ID',
+        ),
+        'column1',
+        'column2',
+    ),
+));
